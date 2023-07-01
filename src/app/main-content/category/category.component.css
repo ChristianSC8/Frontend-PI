@@ -432,7 +432,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    user-select: none;
+
 }
 .conatiner-category .content-form form .inputs-state .state-active input{
     width: 20px;
@@ -446,7 +446,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    user-select: none;
+
 }
 .conatiner-category .content-form form .inputs-state .state-inactive input{
     width: 20px;
@@ -484,7 +484,6 @@
 .conatiner-category .content-form form .content-buttons .buttons .button-create{
     width: 100px;
     height: 100%;
-    background: palevioletred;
 }
 .conatiner-category .content-form form .content-buttons .buttons .button-create button{
     width: 100%;

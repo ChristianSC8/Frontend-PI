@@ -46,9 +46,9 @@
                         <table>
                             <thead>
                               <tr>
+                                <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
-                                <th>Fecha</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                               </tr>
@@ -59,23 +59,23 @@
                     <div class="table">
                         <table>
                             <tbody>
-                                <tr>
-                                    <td>Procesadores</td>
-                                    <td>Amd y intel</td>
-                                    <td>12/34/3034</td>
-                                    <td>activo</td>
+                                <tr *ngFor="let item of listCategory">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.nombre}}</td>
+                                    <td>{{item.descripcion}}</td>
+                                    <td>{{estadoText(item.estado)}}</td>
                                     <td>
                                         <div class="content-actions">
 
 
-                                            <button class="ico-update" #update (click)="openModal(false,false)">
-                                                <i class="fa-sharp fa-solid fa-pen"></i>
+                                            <button class="ico-update" #update (click)="openModal(false,false)" (click)="selectItem(item)">
+                                                <i class="fa-sharp fa-solid fa-pen" ></i>
                                             </button>
 
 
 
                                             
-                                            <button class="ico-delete">
+                                            <button class="ico-delete" (click)="delete(item.id)">
                                                 <i class="fa-solid fa-trash-can"></i> 
                                             </button>
                                         </div>
@@ -108,31 +108,31 @@
         </div>
     </div>
     <div class="content-form">
-        <form action="">
+        <form action=""  [formGroup]="formCategory" (ngSubmit)="save()">
             <div class="input-name">
                 <span class="text-name">Nombre</span>
-                <input type="text">
+                <input type="text" formControlName="nombre">
             </div>
             <div class="input-description">
                 <span class="text-name">Descripcion</span>
-                <textarea></textarea>
+                <textarea formControlName="descripcion"></textarea>
             </div>
             <div class="inputs-state">
                 <span class="text-state">Estado</span>
                 <div class="state-active">
-                    <input type="radio" id="activo" name="estado" value="activo" checked>
+                    <input type="radio" id="activo" name="estado" value="true" formControlName="estado" checked>
                     <span>Activo</span>
                 </div>
                 <div class="state-inactive">
-                    <input type="radio" id="inactivo" name="estado" value="inactivo">
+                    <input type="radio" id="inactivo" name="estado" value="false" formControlName="estado">
                     <span>Inactivo</span>
                 </div>
             </div>  
             <div class="content-buttons">
                 <div class="buttons">
                     <div class="button-create">
-                        <button *ngIf="isNewBtn">Crear</button>
-                        <button *ngIf="!isNewBtn">Actualizar</button>
+                        <button *ngIf="isNewBtn" type="submit" [disabled]="formCategory.invalid" (click)="closeModal()">Crear</button>
+                        <button *ngIf="!isNewBtn" (click)="closeModal()" (click)="update()">Actualizar</button>
                     </div>
                     <div class="button-cancel">
                         <button type="button" #cancel (click)="closeModal()">Cancelar</button>

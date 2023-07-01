@@ -11,7 +11,7 @@ export class MainComponent {
   @ViewChildren('content') content!: QueryList<ElementRef<HTMLDivElement>>;
 
 
-  tabSeleccionado: number = 0;
+  tabSeleccionado: number = 2;
 
   constructor(private sidebarService: SidebarService) {}
 
@@ -22,7 +22,7 @@ export class MainComponent {
       this.mostrarPanel(indice);
     });
   
-    this.mostrarPanel(0);
+    this.mostrarPanel(2);
   }
   
   mostrarPanel(indice: number): void {
