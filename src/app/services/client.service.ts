@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { ClientModel } from '../models/client.model';
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
 
-  private apiUrl = 'http://localhost:8090/cliente';
+  private apiUrl = `${environment.apiUrl}/cliente`;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,7 +25,7 @@ export class ClientService {
   }
   getClientById(id: number): Observable<ClientModel> {
     const url = `${this.apiUrl}/${id}`;
-    return this.httpClient.get<ClientModel>(url);
+    return this.httpClient.get<ClientModel>(url); 
   }
   deleteClient(id: number): Observable<void> {
     const url = `${this.apiUrl}/${id}`;

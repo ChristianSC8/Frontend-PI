@@ -592,19 +592,112 @@
     height: 100%;
     position: relative;
 }
-.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category input{
+
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .input{
     width: 100%;
     height: 100%;
     font-size: 16px;
     outline: none;
     border: 1px solid #000;
+    /* background: green; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    cursor: pointer;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .input .iconCat{
+    width: 40px;
+    height: 100%;
+    /* background: orange; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .input .iconCat i{
+    font-size: 25px;
+    transition: 200ms;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .input .iconCat i.activeUrl{
+    transform: rotate(90deg);
 }
 .container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .text-name{
     position: absolute;
     top: -23px;
     left: 0;  
 }
-
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop{
+    width: 100%;
+    /* height: 200px; */
+    background: #fff;
+    position: absolute;
+    top: 46px;
+    transition: 200ms;
+    visibility: hidden;
+    opacity: 0;
+    border: 1px solid #b4b2b2;
+    overflow: hidden;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop.active{
+    height: 268px;
+    visibility: visible;
+    opacity: 1;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop .drop-search{
+    width: 100%;
+    height: 55px;
+    /* background: green; */
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop .drop-search .content-items{
+    width: 100%;
+    height: 35px;
+    background: paleturquoise;
+    position: relative;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop .drop-search .content-items .search-icon{
+    width: 35px;
+    height: 100%;
+    /* background: red; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop .drop-search .content-items .search-icon i{
+    font-size: 20px;
+    transform: translateX(2px);
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop .drop-search .content-items input{
+    width: 100%;
+    height: 100%;
+    padding-left: 35px;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop .drop-options{
+    width: 100%;
+    height: calc(100% - 55px);
+    /* background: palevioletred; */
+    overflow-y: auto;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop .drop-options .items{
+    width: 100%;
+    height: 42px;
+    /* background: lightgreen; */
+    cursor: pointer;
+    padding: 0 15px;
+    transition: all 100ms;
+    display: flex;
+    align-items: center;
+}
+.container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop .drop-options .items:hover{
+    background: lightseagreen;
+    color: #fff;
+}
 .container-modal .modal-form .modal-buttons{
     width: 100%;
     height: 70px;
