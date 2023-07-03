@@ -695,7 +695,7 @@
     align-items: center;
 }
 .container-modal .modal-form .modal-content .content-inputs .two-inputs .input-category .content-drop .drop-options .items:hover{
-    background: lightseagreen;
+    background: var(--color-main);
     color: #fff;
 }
 .container-modal .modal-form .modal-buttons{
